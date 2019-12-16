@@ -1,0 +1,37 @@
+<div *ngIf="contact" class="row"> <!-- Si le contact à afficher existe-->
+    <div class="col s12 m8 offset-m2">
+    <h2 class="header center">{{ contact.name }} {{ contact.surname }}</h2>
+    <div class="card horizontal hoverable">
+      <div class="card-image">
+        <img [src]="contact.picture">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <table class="bordered striped">
+            <tbody>
+              <tr>
+                <td>Nom</td>
+                <td><strong>{{ contact.name }}</strong></td>
+              </tr>
+              <tr>
+                <td>Prénom</td>
+                <td><strong>{{ contact.surname }}</strong></td>
+              </tr>
+              <tr>
+                <td>Adresse</td>
+                <td><strong>{{ contact.addressNumber }} {{ contact.address }}</strong></td>
+                <td><strong>{{ contact.cp }} {{ contact.town }}</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-action">
+          <a (click)="goBack()">Retour</a>
+          <a (click)="goEdit(contact)">Editer</a>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <!-- Si le contact n'existe pas-->
+    <h4 *ngIf='!contact' class="center">Aucun contact à afficher !</h4>

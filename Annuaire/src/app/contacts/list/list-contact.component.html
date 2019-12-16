@@ -1,0 +1,19 @@
+<h1 class='center'>Contacts</h1>
+  <div class='container'>
+    <div class="row">
+    <div *ngFor='let contact of contacts' class="col s6 m4">
+      <div class="card horizontal" (click)="selectContact(contact)" contact-border-card>
+        <div class="card-image">
+          <img [src]="contact.picture">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>{{ contact.name }} {{ contact.surname}}</p>
+            <p><small>{{ contact.addressNumber }} {{ contact.address }}</small></p>
+            <p><small>{{ contact.cp }} {{ contact.town }}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
